@@ -1,0 +1,24 @@
+{
+  "name": "college-answering-bot",
+  "version": "1.0.0",
+  "description": "A question asnwer web application using algorithm of AI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodejs index,js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rneha725/college-answering-bot.git"
+  },
+  "keywords": [
+    "chatbot",
+    "AI",
+    "coreNLP"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rneha725/college-answering-bot/issues"
+  },
+  "homepage": "https://github.com/rneha725/college-answering-bot#readme"
+}
