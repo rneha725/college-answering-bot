@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<head>
+    <title>Home</title>
+    
+    <!--Jquery-->
+    <script src="libs/jquery-2.2.0.min.js"></script>
+    
+    <!--Bootstrap-->
+    <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    
+</head>
+
+<body>
+    
+    <div class="jumbotron jumbotron-small">
+        <center><h1>Welocome</h1>
+            <p>Please give us a feedback at botbotty@gmail.com<br>NOTE:Only one developer is responsible for all spelling mistakes!!</p></center>
+        
+    </div>
+    
+    <div class="container" id="main" style="padding-top: 40px">
+        <form class="container" method="post">
+                <div class="form-group has-feedback has-clear">
+                    <input name="question" type="text" class="form-control" id="question" placeholder="Enter Your Question Here..."/>
+                    <a class="glyphicon glyphicon-remove-sign form-control-feedback form-control-clear" style="pointer-events: auto; text-decoration: none;cursor: pointer;" id="clear"></a>
+                </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+<script>
+$("#clear").click(function(){
+    $("#question").val('');
+})
+
+$("#submit").click(function() {
+    var question = $("#question").val();
+    console.log(question);
+})
+</script>

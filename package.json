@@ -4,7 +4,7 @@
   "description": "A question asnwer web application using algorithm of AI.",
   "main": "index.js",
   "scripts": {
-    "test": "nodejs index,js"
+    "test": "nodejs index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/rneha725/college-answering-bot/issues"
   },
-  "homepage": "https://github.com/rneha725/college-answering-bot#readme"
+  "homepage": "https://github.com/rneha725/college-answering-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
 }
