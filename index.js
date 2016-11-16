@@ -1,6 +1,22 @@
 var express = require('express');
 var app = express();
 
+//stanford-corenlp
+var NLP = require('stanford-corenlp');
+
+var coreNLP = new NLP.StanfordNLP({
+
+    "nlpPath":"./node_modules/stanford-corenlp/corenlp",
+    "version":"3.6.0"
+
+},function(err) {
+  coreNLP.process('This is so good.', function(err, result) {
+    console.log(err,JSON.stringify(result));
+  });
+});
+
+
+
 //For post request
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
