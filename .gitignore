@@ -1,0 +1,3 @@
+#ignore corenlp folder consisting large jars
+corenlp/*
+node_modules/stanford-corenlp/corenlp/*

@@ -1,20 +1,57 @@
 var express = require('express');
+var http = require('http');
+var url = require('url');
+var path = require('path');
+
 var app = express();
 
 //stanford-corenlp
 var NLP = require('stanford-corenlp');
 
-var coreNLP = new NLP.StanfordNLP({
+var config = {
+    "nlpPath":"./corenlp",
+    "version":"3.6.0",
+    'annotators': ['tokenize','ssplit','pos','parse','sentiment','depparse','quote'], //optional!
+	'extra' : {
+      'depparse.extradependencie': 'MAXIMAL'
+    }
+}
 
-    "nlpPath":"./node_modules/stanford-corenlp/corenlp",
-    "version":"3.6.0"
+var coreNLP = new NLP.StanfordNLP(config);
 
-},function(err) {
-  coreNLP.process('This is so good.', function(err, result) {
-    console.log(err,JSON.stringify(result));
-  });
+var server = http.createServer(function (request, response) {
+  var queryData = url.parse(request.url, true).query;
+  response.writeHead(200, {"Content-Type": "text/plain"});
+
+  if (queryData.q) {
+    
+    coreNLP.process(queryData.q, function(err, result) {
+	    if(err)
+	    	throw err;
+	    else
+	    	response.end(JSON.stringify(result));
+	});
+    
+
+  } else {
+    response.end("Hello!\n");
+  }
 });
+server.listen(8990);
 
+var request = require("request")
+
+var link = "http://localhost:8990/?q=There%20are%20slow%20and%20repetitive%20parts,%20but%20it%20has%20just%20enough%20spice%20to%20keep%20it%20interesting."
+
+request({
+    url: link,
+    json: true
+}, function (error, response, body) {
+
+    if (!error && response.statusCode === 200) {
+        console.log(body) // Print the json response
+    }
+})
 
 
 //For post request

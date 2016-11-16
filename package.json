@@ -23,6 +23,7 @@
   "homepage": "https://github.com/rneha725/college-answering-bot#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "stanford-corenlp": "^1.0.0"
   }
 }
