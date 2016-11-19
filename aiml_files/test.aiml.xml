@@ -1,0 +1,38 @@
+<aiml>
+<category>
+<pattern>E4BS</pattern>
+<template>
+Syllabus link.
+</template>
+</category>
+
+<category>
+<pattern>E4BT</pattern>
+<template>
+Timetable link.
+</template>
+</category>
+
+<category>
+<pattern>C4BT</pattern>
+<template>
+CSE Timetable link.
+</template>
+</category>
+
+<category>
+<pattern>C4BS</pattern>
+<template>
+CSE Syllabus link.
+</template>
+</category>
+
+<category>
+<pattern>C4BL</pattern>
+<template>
+CSE LP link.
+</template>
+</category>
+
+</aiml>
+
